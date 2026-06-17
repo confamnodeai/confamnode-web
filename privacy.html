@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — ConfamNode</title>
+  <meta name="description" content="ConfamNode Privacy Policy — how we collect, use, and protect your data." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --green: #00C853;
+      --black: #0A0A0A;
+      --surface: #111111;
+      --border: #222222;
+      --muted: #666666;
+      --white: #F5F5F5;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Space Grotesk', sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--green); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2rem;
+      background: rgba(10,10,10,0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Space Mono', monospace;
+      font-size: 1rem; font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--green); }
+    .nav-back {
+      font-size: 0.875rem; color: var(--muted);
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--white); text-decoration: none; }
+
+    /* LAYOUT */
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 8rem 2rem 6rem;
+    }
+
+    /* HEADER */
+    .page-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6875rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1rem;
+    }
+
+    .page-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .page-meta {
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* TABLE OF CONTENTS */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .toc-title {
+      font-size: 0.75rem;
+      font-family: 'Space Mono', monospace;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .toc ol {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      counter-reset: toc;
+    }
+
+    .toc li {
+      counter-increment: toc;
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    .toc li::before {
+      content: counter(toc, decimal-leading-zero);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+
+    .toc a {
+      color: var(--white);
+      transition: color 0.2s;
+    }
+
+    .toc a:hover {
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    /* CONTENT */
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .section {
+      scroll-margin-top: 6rem;
+    }
+
+    .section h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 0.75rem;
+      align-items: baseline;
+    }
+
+    .section h2 .num {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .section p {
+      color: #aaa;
+      font-size: 0.9375rem;
+      margin-bottom: 1rem;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    .section ul, .section ol {
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .section ul li, .section ol li {
+      font-size: 0.9375rem;
+      color: #aaa;
+      display: flex;
+      gap: 0.75rem;
+      padding-left: 0;
+    }
+
+    .section ul li::before {
+      content: '→';
+      color: var(--green);
+      flex-shrink: 0;
+    }
+
+    .section ol {
+      counter-reset: ol-counter;
+    }
+
+    .section ol li {
+      counter-increment: ol-counter;
+    }
+
+    .section ol li::before {
+      content: counter(ol-counter) '.';
+      color: var(--muted);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+
+    .section li strong { color: var(--white); }
+
+    /* TABLE */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 1rem;
+    }
+
+    .data-table thead {
+      background: #161616;
+    }
+
+    .data-table th {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-size: 0.6875rem;
+      font-family: 'Space Mono', monospace;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .data-table td {
+      padding: 0.875rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: #aaa;
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td:first-child { color: var(--white); font-weight: 500; }
+
+    /* HIGHLIGHT BOX */
+    .highlight-box {
+      background: rgba(0, 200, 83, 0.05);
+      border: 1px solid rgba(0, 200, 83, 0.2);
+      border-radius: 6px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .highlight-box p {
+      color: #aaa;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .highlight-box strong { color: var(--green); }
+
+    /* CONTACT BOX */
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem 2rem;
+      margin-top: 1rem;
+    }
+
+    .contact-box p {
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-box p:last-child { margin-bottom: 0; }
+
+    /* DIVIDER */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 3rem 0;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .footer-logo span { color: var(--green); }
+    .footer-copy { font-size: 0.8125rem; color: var(--muted); }
+
+    @media (max-width: 600px) {
+      nav { padding: 1rem; }
+      .page { padding: 6rem 1.25rem 4rem; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Confam<span>Node</span></a>
+  <a href="index.html" class="nav-back">← Back to home</a>
+</nav>
+
+<!-- PAGE -->
+<div class="page">
+
+  <div class="page-label">Legal</div>
+  <h1 class="page-title">Privacy Policy</h1>
+  <p class="page-meta">
+    Last updated: June 2026 &nbsp;·&nbsp;
+    Operated by JoTeq the First, Abuja, Nigeria &nbsp;·&nbsp;
+    Questions? <a href="mailto:hello@confamnode.com">hello@confamnode.com</a>
+  </p>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#who-we-are">Who we are</a></li>
+      <li><a href="#what-we-collect">What data we collect</a></li>
+      <li><a href="#why-we-collect">Why we collect it</a></li>
+      <li><a href="#how-we-use">How we use your data</a></li>
+      <li><a href="#where-stored">Where your data is stored</a></li>
+      <li><a href="#third-parties">Third parties</a></li>
+      <li><a href="#retention">Data retention</a></li>
+      <li><a href="#your-rights">Your rights</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#children">Children</a></li>
+      <li><a href="#changes">Changes to this policy</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ol>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <div class="section" id="who-we-are">
+      <h2><span class="num">01</span> Who we are</h2>
+      <p>
+        ConfamNode is operated by <strong>JoTeq the First</strong>, a technology company
+        based in Abuja, Nigeria. We provide an AI inference gateway that allows Nigerian
+        developers and businesses to access AI models, billed in Naira.
+      </p>
+      <div class="contact-box">
+        <p><strong>Data Controller:</strong> JoTeq the First</p>
+        <p><strong>Location:</strong> Abuja, Nigeria</p>
+        <p><strong>Contact:</strong> <a href="mailto:hello@confamnode.com">hello@confamnode.com</a></p>
+      </div>
+      <p style="margin-top:1rem;">
+        This policy is written in line with the Nigeria Data Protection Act 2023 (NDPA)
+        and the guidance of the Nigeria Data Protection Commission (NDPC).
+      </p>
+    </div>
+
+    <div class="section" id="what-we-collect">
+      <h2><span class="num">02</span> What data we collect</h2>
+      <p>We collect only what is necessary to provide the service.</p>
+
+      <p><strong style="color:var(--white)">Account information</strong></p>
+      <ul>
+        <li>First name and last name</li>
+        <li>Email address</li>
+        <li>Password (stored as a hashed value — never in plain text)</li>
+      </ul>
+
+      <p><strong style="color:var(--white)">Billing information</strong></p>
+      <ul>
+        <li>Wallet balance (Naira)</li>
+        <li>Transaction history — top-ups and deductions</li>
+        <li>Payment references from Paystack (we do not store your card details — Paystack handles this)</li>
+      </ul>
+
+      <p><strong style="color:var(--white)">Usage information</strong></p>
+      <ul>
+        <li>API requests made — model used, timestamp, token counts</li>
+        <li>Cost per request in Naira</li>
+        <li>Your ConfamNode API key</li>
+      </ul>
+
+      <p><strong style="color:var(--white)">What we do NOT store</strong></p>
+      <ul>
+        <li>The content of your prompts and AI responses is not permanently stored beyond what is necessary for billing and abuse prevention</li>
+        <li>Your card or bank account details — Paystack manages all payment data</li>
+      </ul>
+    </div>
+
+    <div class="section" id="why-we-collect">
+      <h2><span class="num">03</span> Why we collect it</h2>
+      <p>We process your personal data under the following lawful bases:</p>
+      <ul>
+        <li><strong>Contract</strong> — to provide the service you signed up for: generating API keys, billing your wallet, tracking usage</li>
+        <li><strong>Legal obligation</strong> — to comply with Nigerian financial and tax regulations</li>
+        <li><strong>Legitimate interest</strong> — to detect fraud, prevent abuse, and keep the service secure</li>
+      </ul>
+    </div>
+
+    <div class="section" id="how-we-use">
+      <h2><span class="num">04</span> How we use your data</h2>
+      <ul>
+        <li>To create and manage your ConfamNode account</li>
+        <li>To generate and manage your API keys</li>
+        <li>To process wallet top-ups via Paystack</li>
+        <li>To calculate and deduct usage costs in Naira</li>
+        <li>To send important service updates — billing alerts, security notices</li>
+        <li>To respond to support requests</li>
+      </ul>
+      <div class="highlight-box">
+        <p><strong>We do not sell your data.</strong> We do not share your data with advertisers. ConfamNode products are ad-free.</p>
+      </div>
+    </div>
+
+    <div class="section" id="where-stored">
+      <h2><span class="num">05</span> Where your data is stored</h2>
+      <ul>
+        <li>Account, billing, and usage data is stored on servers located in <strong>Nigeria</strong>, operated by JoTeq the First</li>
+        <li>Requests made to <strong>local models</strong> (such as confam-nano) are processed entirely on Nigerian hardware and never transmitted outside Nigeria</li>
+        <li>Requests made to <strong>cloud models</strong> are routed through third-party AI infrastructure which may process data outside Nigeria. We select providers with strong data protection practices, but data sent to these models is subject to the destination provider's own data handling policies</li>
+      </ul>
+      <div class="highlight-box">
+        <p>If you require data to remain entirely within Nigeria, use our <strong>local models</strong> — they run on Nigerian hardware with full data residency.</p>
+      </div>
+    </div>
+
+    <div class="section" id="third-parties">
+      <h2><span class="num">06</span> Third parties</h2>
+      <p>We share limited data with the following processors strictly to operate the service:</p>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Third Party</th>
+            <th>Purpose</th>
+            <th>Data Shared</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Paystack</td>
+            <td>Payment processing</td>
+            <td>Email, transaction amount</td>
+          </tr>
+          <tr>
+            <td>AI model providers</td>
+            <td>Processing your AI requests (cloud models only)</td>
+            <td>Prompt content sent for cloud models only</td>
+          </tr>
+          <tr>
+            <td>Cloudflare</td>
+            <td>Website hosting, email routing</td>
+            <td>Email address, website traffic</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin-top:1rem;">We do not share data with any party for marketing or advertising purposes.</p>
+    </div>
+
+    <div class="section" id="retention">
+      <h2><span class="num">07</span> Data retention</h2>
+      <ul>
+        <li><strong>Account data</strong> — retained while your account is active, deleted within 30 days of account closure request</li>
+        <li><strong>Transaction records</strong> — retained for 5 years to comply with Nigerian financial record-keeping requirements</li>
+        <li><strong>Usage logs</strong> — retained for 12 months for billing disputes and abuse investigation, then deleted</li>
+      </ul>
+    </div>
+
+    <div class="section" id="your-rights">
+      <h2><span class="num">08</span> Your rights</h2>
+      <p>As a data subject under the NDPA, you have the right to:</p>
+      <ul>
+        <li><strong>Access</strong> — request a copy of the personal data we hold about you</li>
+        <li><strong>Rectification</strong> — request correction of inaccurate data</li>
+        <li><strong>Erasure</strong> — request deletion of your account and associated data</li>
+        <li><strong>Object</strong> — object to certain types of processing</li>
+        <li><strong>Data portability</strong> — request your data in a portable format</li>
+        <li><strong>Withdraw consent</strong> — where processing is based on consent</li>
+      </ul>
+      <p>
+        To exercise any of these rights, contact
+        <a href="mailto:hello@confamnode.com">hello@confamnode.com</a>.
+        We will respond within the timeframes required by the NDPA.
+      </p>
+    </div>
+
+    <div class="section" id="security">
+      <h2><span class="num">09</span> Security</h2>
+      <p>We take reasonable technical and organisational measures to protect your data:</p>
+      <ul>
+        <li>Passwords are hashed — never stored in plain text</li>
+        <li>API keys are cryptographically generated and can be revoked at any time</li>
+        <li>Access to production systems is restricted</li>
+        <li>Local models run on isolated, access-controlled hardware</li>
+      </ul>
+      <p>
+        No system is 100% secure. If a data breach occurs that affects your personal data,
+        we will notify you and the NDPC as required by law.
+      </p>
+    </div>
+
+    <div class="section" id="children">
+      <h2><span class="num">10</span> Children</h2>
+      <p>
+        ConfamNode is not directed at children under the age of 18.
+        We do not knowingly collect personal data from minors.
+        If you believe a minor has provided us with personal data,
+        contact us at <a href="mailto:hello@confamnode.com">hello@confamnode.com</a>
+        and we will delete it promptly.
+      </p>
+    </div>
+
+    <div class="section" id="changes">
+      <h2><span class="num">11</span> Changes to this policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. Material changes will be
+        communicated via email or a notice on our website. Continued use of the service
+        after changes take effect constitutes acceptance of the updated policy.
+      </p>
+    </div>
+
+    <div class="section" id="contact">
+      <h2><span class="num">12</span> Contact us</h2>
+      <p>For any questions about this Privacy Policy or how your data is handled:</p>
+      <div class="contact-box">
+        <p><strong>General:</strong> <a href="mailto:hello@confamnode.com">hello@confamnode.com</a></p>
+        <p><strong>Support:</strong> <a href="mailto:support@confamnode.com">support@confamnode.com</a></p>
+        <p><strong>Billing:</strong> <a href="mailto:billing@confamnode.com">billing@confamnode.com</a></p>
+      </div>
+    </div>
+
+  </div>
+  <!-- end content -->
+
+  <div class="divider"></div>
+
+  <p style="font-size:0.8125rem;color:var(--muted);line-height:1.7;">
+    This policy is provided in good faith to comply with the Nigeria Data Protection Act 2023 (NDPA).
+    JoTeq the First works towards full registration with the Nigeria Data Protection Commission (NDPC)
+    as the service grows. For complex compliance matters, please consult a qualified legal professional.
+  </p>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="index.html" class="footer-logo">Confam<span>Node</span></a>
+  <div class="footer-copy">© 2026 JoTeq the First. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
